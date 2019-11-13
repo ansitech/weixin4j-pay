@@ -52,7 +52,7 @@ public class PayWalletComponment extends AbstractComponent {
         //数据签名
         Map<String, String> map = new HashMap<String, String>();
         map.put("mch_appid", transPayWallet.getMch_appid());
-        map.put("mch_id", mchId);
+        map.put("mchid", mchId);
         map.put("nonce_str", nonceStr);
         map.put("partner_trade_no", transPayWallet.getPartner_trade_no());
         map.put("openid", transPayWallet.getOpenid());
@@ -76,7 +76,7 @@ public class PayWalletComponment extends AbstractComponent {
         StringBuilder sb = new StringBuilder();
         sb.append("<xml>");
         sb.append("<mch_appid>").append(transPayWallet.getMch_appid()).append("</mch_appid>");
-        sb.append("<mch_id>").append(mchId).append("</mch_id>");
+        sb.append("<mchid>").append(mchId).append("</mchid>");
         sb.append("<nonce_str>").append(nonceStr).append("</nonce_str>");
         sb.append("<partner_trade_no>").append(transPayWallet.getPartner_trade_no()).append("</partner_trade_no>");
         sb.append("<openid>").append(transPayWallet.getOpenid()).append("</openid>");
