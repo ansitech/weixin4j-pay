@@ -23,6 +23,8 @@ import java.util.HashMap;
 import java.util.Map;
 import org.weixin4j.pay.component.AbstractComponent;
 import org.weixin4j.pay.component.PayBankComponment;
+import org.weixin4j.pay.component.PayWalletComponment;
+import org.weixin4j.pay.component.RedpackComponment;
 import org.weixin4j.pay.loader.IRsaPubKeyLoader;
 import org.weixin4j.pay.model.rsa.RsaXml;
 
@@ -113,7 +115,7 @@ public class WeixinPay {
      * 获取RSA公钥
      *
      * @return RSA公钥
-     * @throws org.weixin4j.pay.WeixinPayException
+     * @throws org.weixin4j.pay.WeixinPayException 微信服务异常
      * @since 1.0.0
      */
     public String getRsaPubKey() throws WeixinPayException {
@@ -142,6 +144,36 @@ public class WeixinPay {
             return (PayBankComponment) components.get(key);
         }
         PayBankComponment component = new PayBankComponment(this);
+        components.put(key, component);
+        return component;
+    }
+
+    /**
+     * 获取现金红包组件
+     *
+     * @return 现金红包组件
+     */
+    public RedpackComponment redpack() {
+        String key = RedpackComponment.class.getName();
+        if (components.containsKey(key)) {
+            return (RedpackComponment) components.get(key);
+        }
+        RedpackComponment component = new RedpackComponment(this);
+        components.put(key, component);
+        return component;
+    }
+
+    /**
+     * 获取企业付款到零钱组件
+     *
+     * @return 企业付款到零钱组件
+     */
+    public PayWalletComponment payWallet() {
+        String key = PayWalletComponment.class.getName();
+        if (components.containsKey(key)) {
+            return (PayWalletComponment) components.get(key);
+        }
+        PayWalletComponment component = new PayWalletComponment(this);
         components.put(key, component);
         return component;
     }

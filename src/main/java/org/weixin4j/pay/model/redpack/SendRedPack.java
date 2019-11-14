@@ -21,9 +21,7 @@ package org.weixin4j.pay.model.redpack;
 
 /**
  * 现金红包对象
- *
- * 接口文档：https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon.php?chapter=13_4&index=3
- *
+ * 
  * <p>
  * 用于企业向微信用户个人发现金红包</p>
  *

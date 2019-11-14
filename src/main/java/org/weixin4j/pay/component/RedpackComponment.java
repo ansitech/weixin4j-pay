@@ -121,7 +121,7 @@ public class RedpackComponment extends AbstractComponent {
      * @param mch_billno 商户订单号
      * @param appid 微信公众帐号ID
      * @return 红包发送记录
-     * @throws WeixinPayException
+     * @throws WeixinPayException 微信服务异常
      */
     public SendRedpackInfo gethbinfo(String mch_billno, String appid) throws WeixinPayException {
         //获取微信支付配置

@@ -42,7 +42,7 @@ public class PayBankComponment extends AbstractComponent {
      * 获取RSA公钥
      *
      * @return RSA公钥
-     * @throws org.weixin4j.pay.WeixinPayException
+     * @throws org.weixin4j.pay.WeixinPayException 微信服务异常
      */
     public RsaXml getPublicKey() throws WeixinPayException {
         //获取微信支付配置
@@ -103,7 +103,7 @@ public class PayBankComponment extends AbstractComponent {
      *
      * @param transPayBank 付款到银行卡
      * @return 付款结果
-     * @throws org.weixin4j.pay.WeixinPayException
+     * @throws org.weixin4j.pay.WeixinPayException 微信服务异常
      */
     public TransPayBankResult transPayBank(TransPayBank transPayBank) throws WeixinPayException {
         //获取微信支付配置
@@ -175,7 +175,7 @@ public class PayBankComponment extends AbstractComponent {
      *
      * @param partnerTradeNo 商户企业付款单号
      * @return 企业付款到银行卡信息
-     * @throws org.weixin4j.pay.WeixinPayException
+     * @throws org.weixin4j.pay.WeixinPayException 微信服务异常
      */
     public TransPayBankInfo queryBank(String partnerTradeNo) throws WeixinPayException {
         //获取微信支付配置

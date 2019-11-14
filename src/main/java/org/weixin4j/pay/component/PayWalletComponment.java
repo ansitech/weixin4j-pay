@@ -41,7 +41,7 @@ public class PayWalletComponment extends AbstractComponent {
      *
      * @param transPayWallet 企业付款到零钱信息
      * @return 企业付款到零钱结果
-     * @throws org.weixin4j.pay.WeixinPayException
+     * @throws org.weixin4j.pay.WeixinPayException 微信服务异常
      */
     public TransPayWalletResult transPayWallet(TransPayWallet transPayWallet) throws WeixinPayException {
         //获取微信支付配置
@@ -129,7 +129,7 @@ public class PayWalletComponment extends AbstractComponent {
      * @param partnerTradeNo 商户企业付款单号
      * @param appid 微信公众帐号ID
      * @return 企业付款到零钱信息
-     * @throws org.weixin4j.pay.WeixinPayException
+     * @throws org.weixin4j.pay.WeixinPayException 微信服务异常
      */
     public TransPayWalletInfo getTransferInfo(String partnerTradeNo, String appid) throws WeixinPayException {
         //获取微信支付配置
