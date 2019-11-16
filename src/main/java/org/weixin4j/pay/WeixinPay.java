@@ -111,6 +111,10 @@ public class WeixinPay {
         return rsaPubKeyLoader;
     }
 
+    public void setRsaPubKeyLoader(IRsaPubKeyLoader rsaPubKeyLoader) {
+        this.rsaPubKeyLoader = rsaPubKeyLoader;
+    }
+    
     /**
      * 获取RSA公钥
      *
