@@ -2,7 +2,7 @@
  * 微信公众平台(JAVA) SDK
  *
  * Copyright (c) 2014, Ansitech Network Technology Co.,Ltd All rights reserved.
- * 
+ *
  * http://www.weixin4j.org/
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,14 +19,12 @@
  */
 package org.weixin4j.pay;
 
-import java.util.HashMap;
-import java.util.Map;
-import org.weixin4j.pay.component.AbstractComponent;
-import org.weixin4j.pay.component.PayBankComponment;
-import org.weixin4j.pay.component.PayWalletComponment;
-import org.weixin4j.pay.component.RedpackComponment;
+import org.weixin4j.pay.component.*;
 import org.weixin4j.pay.loader.IRsaPubKeyLoader;
 import org.weixin4j.pay.model.rsa.RsaXml;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * 微信平台基础支持对象
@@ -114,7 +112,7 @@ public class WeixinPay {
     public void setRsaPubKeyLoader(IRsaPubKeyLoader rsaPubKeyLoader) {
         this.rsaPubKeyLoader = rsaPubKeyLoader;
     }
-    
+
     /**
      * 获取RSA公钥
      *
@@ -178,6 +176,21 @@ public class WeixinPay {
             return (PayWalletComponment) components.get(key);
         }
         PayWalletComponment component = new PayWalletComponment(this);
+        components.put(key, component);
+        return component;
+    }
+
+    /**
+     * 获取订单组件
+     *
+     * @return 订单组件
+     */
+    public OrderComponent orderComponent() {
+        String key = OrderComponent.class.getName();
+        if (components.containsKey(key)) {
+            return (OrderComponent) components.get(key);
+        }
+        OrderComponent component = new OrderComponent(this);
         components.put(key, component);
         return component;
     }

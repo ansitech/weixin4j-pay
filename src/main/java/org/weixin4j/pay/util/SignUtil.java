@@ -2,7 +2,7 @@
  * 微信公众平台(JAVA) SDK
  *
  * Copyright (c) 2014, Ansitech Network Technology Co.,Ltd All rights reserved.
- * 
+ *
  * http://www.weixin4j.org/
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
